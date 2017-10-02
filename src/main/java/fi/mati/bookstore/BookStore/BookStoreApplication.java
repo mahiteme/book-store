@@ -21,7 +21,7 @@ public class BookStoreApplication {
 	@Bean
 	public CommandLineRunner bookDemo(BookRepository repository) {
 		return (args) -> {
-			log.info("save a coupld of books");
+			log.info("save a couple of books");
 			repository.save(new Book("title 1", "author 1", 1978, "isbn 1", 25.00));
 			repository.save(new Book("title 2", "author 2", 1979, "isbn 2", 26.50));
 			

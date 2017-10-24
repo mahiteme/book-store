@@ -24,26 +24,8 @@
 			<label for="price">Price</label>
 			<input type="text" id="price" th:field="*{price}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
-			<input type="submit" value="Save"></input>
+			<input class="btn btn-success" type="submit" value="Save"></input>
 		</form>
 	</div>
-	<table>
-		<tr>
-		    <th>Title</th>
-		    <th>Author</th>
-		    <th>Year</th>
-		    <th>isbn</th>
-		    <th>Price</th>
-		</tr>  
-    	<tr th:each = "book : ${books}">
-    		<td th:text="${book.title}"></td>
-    		<td th:text="${book.author}"></td>
-    		<td th:text="${book.year}"></td>
-    		<td th:text="${book.isbn}"></td>
-    		<td th:text="${book.price}"></td>
-    		
- 			<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>    		
-    	</tr>
-     </table>
 </body>
 </html>

@@ -17,13 +17,13 @@ public class BookStoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookStoreApplication.class, args);
 	}
-	
+
 	@Bean
 	public CommandLineRunner bookDemo(BookRepository repository) {
 		return (args) -> {
 			log.info("save a couple of books");
-			repository.save(new Book("title 1", "author 1", 1978, "isbn 1", 25.00));
-			repository.save(new Book("title 2", "author 2", 1979, "isbn 2", 26.50));
+			repository.save(new Book("Being ugly", "Sam Gautam", 2017, "isbn1", 25.00));
+			repository.save(new Book("5 steps to pass exams without studying", "Yazeed M", 2015, "isbn2", 26.50));
 			
 			log.info("fetch all books");
 			for (Book book : repository.findAll()) {

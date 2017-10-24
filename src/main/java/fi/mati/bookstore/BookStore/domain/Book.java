@@ -3,6 +3,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * @author mahiteme
@@ -19,6 +21,10 @@ public class Book {
 	private String isbn;
 	private double price;
 
+	@ManyToOne
+	@JoinColumn(name = "categoryId")
+	private Category category;
+	
 	public Book() {}
 	
 	public Book(String title, String author, int year, String isbn, double price) {
